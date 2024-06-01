@@ -8,6 +8,20 @@ class Generator(nn.Module):
     def __init__(self, input_size=32, nc=1, ngf=128, nz=200):
         super(Generator, self).__init__()
 
+        """  Initializes a generator network for a GAN with the given parameters, 
+             with the number of layers determined by input size
+
+        Args:
+            input_size (int): Size of the 2D input image (assumed to be square).
+            nc (int)        : Number of channels in the input image. 
+            ngf (int)       : Number of 'features' or channels used by the generator network in last layer.
+            nz (int)        : Size of the latent vector used to generate an image.
+
+        Returns:
+            None
+
+        """
+
         self.input_size = input_size
         self.nc = nc
         self.ngf = ngf
@@ -46,6 +60,19 @@ class Generator(nn.Module):
 class Discriminator(nn.Module):
     def __init__(self, input_size=32, nc=1, ndf=128):
         super(Discriminator, self).__init__()
+
+        """  Initializes a discriminator network for a GAN with the given parameters, 
+             with the number of layers determined by input size.
+
+        Args:
+            input_size (int): Size of the 2D input image (assumed to be square).
+            nc (int)        : Number of channels in the input image. 
+            ndf (int)       : Number of 'features' or channels used by the discriminator network in last layer.
+
+        Returns:
+            None
+            
+        """
 
         self.input_size = input_size
         self.nc = nc
